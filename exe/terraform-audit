@@ -1,0 +1,28 @@
+#!/usr/bin/env ruby
+
+require 'optparse'
+
+CONFIG_FILE = 'tfaudit.rb'
+
+options = {
+  config_file: nil,
+  state_file: nil
+}
+OptionParser.new do |opts|
+  opts.on("-c", "--config [FILE]", "Specify the config file to use (defaults to #{CONFIG_FILE} in current 
+          directory)") do |c|
+    options[:config_file] = File.expand_path(c)
+  end
+  opts.on("-s", "--statefile [FILE]", "Use a state file from disk for the terraform state. 
+          By default, state is retrieved from `terraform state pull`.") do |s|
+    options[:state_file] = File.expand_path(s)
+  end
+end.parse!
+
+if options[:config_file].nil? && File.exist?(CONFIG_FILE)
+  options[:config_file] = File.expand_path(CONFIG_FILE)
+end
+
+require "terraform-audit"
+TerraformAudit::run(options)
+
