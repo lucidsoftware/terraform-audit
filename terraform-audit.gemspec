@@ -12,7 +12,7 @@ Gem::Specification.new do |spec|
   spec.summary       = %q{Tool to list resources not managed by terraform.}
   spec.description   = %q{This compares your actual infrastructure to the terraform
   state to find resources that aren't managed by terraform, but should be.
-  This DOES NOT generate terraform config for or delete unmanaged resources, it just 
+  This DOES NOT generate terraform config for or delete unmanaged resources, it just
   reports them.
   At the moment, only AWS resources are supported.}
   #spec.homepage      = "TODO: Put your gem's website or public repo URL here."
@@ -25,8 +25,8 @@ Gem::Specification.new do |spec|
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "aws-sdk", "~> 3.0"
+  spec.add_dependency "aws-sdk-rds", "~> 1.78"
 
-  spec.add_development_dependency "bundler", "~> 1.16"
-  spec.add_development_dependency "rake", "~> 10.0"
+  spec.add_development_dependency "bundler", "~> 2.1.4"
+  spec.add_development_dependency "rake", "~> 13.0"
 end
