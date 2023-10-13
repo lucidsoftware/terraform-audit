@@ -5,21 +5,11 @@ by Terraform, but should be.
 
 Currently it only supports some types of AWS resources, but adding additional resource types is easy and pull requests are welcome.
 
-## Installation
+## Gem Warning
 
-Add this line to your application's Gemfile:
+This project is not currently on rubygems.org or any other gem hosting service.
 
-```ruby
-gem 'terraform-audit'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install terraform-audit
+There is a terraform-audit gem there, but it is *NOT* associated with this project. Do not use it.
 
 ## Usage
 
