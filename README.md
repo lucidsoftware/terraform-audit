@@ -5,6 +5,10 @@ by Terraform, but should be.
 
 Currently it only supports some types of AWS resources, but adding additional resource types is easy and pull requests are welcome.
 
+## Status
+
+This project isn't actively worked on. Pull requests are still accepted, but no active work is being done on it.
+
 ## Gem Warning
 
 This project is not currently on rubygems.org or any other gem hosting service.
